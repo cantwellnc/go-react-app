@@ -50,7 +50,6 @@ func MovieHandler(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, gin.H{"message": "An internal error occurred. Please try again later."})
 		return
 	}
-	log.Println("HANDLING")
 
 	movieChan := make(chan Movie, len(titleList))
 	errChan := make(chan error, len(titleList))
